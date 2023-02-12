@@ -8,35 +8,25 @@
 <link href="images/dpc.jpeg" rel="icon">
 </head>
 </head>
-<body>
-<h1 align="center">Welcome to DPC Demo Inc, Calgary, Canada Office.</h1>
-<h1 align="center">We are developing and supporting quality Software Solutions to millions of clients.
-	We offer Training for IT Professional with Linux and Cloud equipping IT Engineers for best performance. God Loves you. Everyone will be hired with multiple job offers, Amen</h1>
-<hr>
-<br>
-	<h1><h3> Server Side IP Address </h3><br>
+<body style="background-color:rgb(220, 220, 220);" >
+<h1 align="center" style="color:Tomato;" >Welcome to DPC Demo Inc</h1>
+<h1 align="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit aspernatur odio, sunt modi nulla cupiditate 
+	nesciunt culpa quod nam consequatur quo. Quasi quibusdam mollitia sunt veniam saepe autem aperiam iure. Lorem ipsum dolor sit 
+	amet consectetur adipisicing elit. Commodi iusto consequuntur ratione magnam ut in molestias voluptatum similique amet et 
+	animi debitis quos qui, praesentium quaerat dolorem perspiciatis accusamus ipsam quas. Alias vero veniam libero voluptate 
+	eveniet fugit, praesentium reiciendis totam sed! Suscipit perspiciatis molestiae aut voluptatum dolor ut alias tempora inventore commodi 
+	culpa non velit, sunt explicabo minima 
+	consequatur quae accusantium, omnis cum harum et reprehenderit. Sint, ab quis? Nobis aspernatur eos excepturi quasi.</h1>
 
-<% 
-String ip = "";
-InetAddress inetAddress = InetAddress.getLocalHost();
-ip = inetAddress.getHostAddress();
-out.println("Server Host Name :: "+inetAddress.getHostName()); 
-%>
-<br>
-<%out.println("Server IP Address :: "+ip);%>
-		
-</h1>
-	
-<hr>
 <div style="text-align: center;">
 	<span>
-		<img src="images/DP black.png" alt="" width="150">
+		<img src="images/dpc.jpg" alt="" width="150">
 	</span>
-	<span style="font-weight: bold;">
+	<span style="font-weight: bold;"><h3>
                 DPC Demo Inc, 
 		Calgary, Alberta, Canada
 		+1 xxx xxx xxx,
-		info@dpc-demo.com
+		info@dpc-demo.com</h3>
 		<br>
 		<a href="mailto:info@acadalearning">Mail to DPC Inc</a>
 	</span>
@@ -45,8 +35,9 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 	<p> Service : <a href="services/employee/getEmployeeDetails">Get Employee Details </p>
 <hr>
 <hr>
-<p align=center>DPC Inc - Consultant, Training and Software Development</p>
-<p align=center><small>Copyrights 2023 by <a href="http://acadalearning.com/">DPC Demo Inc</a> </small></p>
-
+<p align=center>DPC Inc - Consultant, Software Development Automation and Testing</p>
+<p align=center><small>Copyrights 2023 by <a href="http://dpc-demo.com/">DPC Demo Inc</a> </small></p>
+<br>
+<h3>Created by Sola Adebayo</h3>
 </body>
 </html>
