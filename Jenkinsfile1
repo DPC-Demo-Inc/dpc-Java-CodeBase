@@ -9,17 +9,14 @@
     stages{
       
         stage('docker build'){
-            steps{
-                script{
-                    sh 'docker build -t nwajienelson/webapp:${VERSION} .'
-                }
-            }
-        }
-        stage('docker push'){
+           
+           stage('docker build and push'){
+           
             steps{
                 script{
                 withCredentials([string(credentialsId: 'docker_pass', variable: 'docker_password')]) {
                    sh '''  
+                                  docker build -t nwajienelson/webapp:${VERSION} .
                                   docker login -u nwajienelson -p ${docker_password}
                                 docker push nwajienelson/webapp:${VERSION}
                                 docker rmi  nwajienelson/webapp:${VERSION}
