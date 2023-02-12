@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+    tools{
+        maven 'maven38'
+    }
+    stages{
+        stage('Build Maven'){
+            steps{
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Java-Techie-jt/devops-automation']]])
+                sh 'mvn clean install'
+            }
+        }
+        stage('docker build') {
+            steps{
+                script{
+                    sh 'docker build -t nwajienelson/new .'
+                }
+            }
+        }
+        stage('docker build'){
+            steps{
+                script{
+                   withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
+                   sh ''' 
+                           docker login -u nwajienelson -p ${dockerhubpwd}
+                           docker push nwajienelson/new
+                           docker rmi  nwajienelson/new
+                     '''
+                }
+            }
+        }
+       
+            }
+        }
+    }
+}
