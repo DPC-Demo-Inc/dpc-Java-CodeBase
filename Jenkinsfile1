@@ -1,7 +1,10 @@
     pipeline {
     
     agent any
-    
+     environment{
+        VERSION = "${env.BUILD_ID}"
+    }
+
     tools{
         maven 'maven39'
     }
@@ -13,10 +16,10 @@
                 script{
                 withCredentials([string(credentialsId: 'docker_pass', variable: 'docker_password')]) {
                    sh '''  
-                                    docker build -t nwajienelson/webapp .
+                                    docker build -t nwajienelson/webapp:{$VERSION} .
                                     docker login -u nwajienelson -p ${docker_password}
-                                    docker push nwajienelson/webapp
-                                    docker rmi  nwajienelson/webapp
+                                    docker push nwajienelson/webapp:{$VERSION}
+                                    docker rmi  nwajienelson/webapp:{$VERSION}
                                 
                      '''
                 }
