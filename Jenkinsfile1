@@ -13,10 +13,10 @@
                 script{
                 withCredentials([string(credentialsId: 'docker_pass', variable: 'docker_password')]) {
                    sh '''  
-                                    docker build -t nwajienelson/web-app:${VERSION} .
+                                    docker build -t nwajienelson/webapp .
                                     docker login -u nwajienelson -p ${docker_password}
-                                    docker push nwajienelson/web-app:${VERSION}
-                                    docker rmi  nwajienelson/web-app:${VERSION}
+                                    docker push nwajienelson/webapp
+                                    docker rmi  nwajienelson/webapp
                                 
                      '''
                 }
