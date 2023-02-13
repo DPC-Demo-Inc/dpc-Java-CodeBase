@@ -27,5 +27,19 @@
         }
        
             }
+            
+        stage('k8s deploy') {
+            steps {
+                 script{
+                     
+                     kubernetesDeploy (configs: 'deploy.yaml', kubeconfigId: 'kubeconfig')
+               
+                    
+                }
+            }
+             
+                
+            }
+            
         }
     }
